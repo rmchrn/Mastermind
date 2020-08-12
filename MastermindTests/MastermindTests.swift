@@ -23,7 +23,7 @@ class MastermindTests: XCTestCase {
     }
     
     func testRandomStringGeneration() {
-        let generatedWord = String.generateRandomWord(ofLength: 4)
+        let generatedWord = String.generateRandomWord(from: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", ofLength: 4)
         XCTAssert(generatedWord.count == 4)
     }
     

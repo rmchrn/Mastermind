@@ -14,8 +14,9 @@ extension String {
         return Array(self)[index]
     }
     
-    static func generateRandomWord(ofLength length:Int) -> String {
-        let fromLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        return String((0..<length).map({_ in fromLetters.randomElement()!}))
+    static func generateRandomWord(from fromLetters:String ,ofLength length:Int) -> String {
+        return String((0..<length).map({_ in
+            (fromLetters.randomElement() ?? Character(""))
+        }))
     }
 }

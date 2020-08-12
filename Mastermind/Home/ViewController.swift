@@ -13,6 +13,7 @@ private enum Constants {
     static let checkButtonTitleSelectedState = "Replay"
     static let validationErrorMessage = "Please make sure you filled all the boxes"
     static let randomStringError = "random string has not generated"
+    static let randomStringSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 }
 
 class ViewController: UIViewController {
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
         checkButton.setTitle(Constants.checkButtonTitleUnSelectedState, for: UIControl.State.normal)
         checkButton.setTitle(Constants.checkButtonTitleSelectedState, for: UIControl.State.selected)
         
-        randomString = String.generateRandomWord(ofLength: 4)
+        randomString = String.generateRandomWord(from: Constants.randomStringSource, ofLength: 4)
         
         debugPrint(randomString ?? Constants.randomStringError)
     }
@@ -53,19 +54,9 @@ class ViewController: UIViewController {
      It is the target for textfield editing change event
      */
     @objc private func textFieldDidChange(sender: UITextField) {
-        var nextInput: UITextField?
         if sender.tag < letterInputs.count {
-            nextInput = letterInputs[sender.tag]
-        }
-        switch sender.tag {
-        case 1:
-            nextInput?.becomeFirstResponder()
-        case 2:
-            nextInput?.becomeFirstResponder()
-        case 3:
-            nextInput?.becomeFirstResponder()
-        default:
-            break
+            let nextInput = letterInputs[sender.tag]
+            nextInput.becomeFirstResponder()
         }
     }
     /**
@@ -80,13 +71,16 @@ class ViewController: UIViewController {
             return
         }
         for i in 0..<4 {
-            let enteredText = letterInputs[i].text ?? ""
-            if randomString!.charAt(index: i) == enteredText.uppercased().first! {
-                backgroundViews[i].backgroundColor = UIColor.green
-            } else if randomString!.contains(enteredText.uppercased()) {
-                backgroundViews[i].backgroundColor = UIColor.orange
-            } else {
-                backgroundViews[i].backgroundColor = UIColor.red
+            let enteredText = letterInputs[i].text
+            let firstLetter = enteredText?.uppercased().first ?? Character("")
+            if let randomString = randomString {
+                if randomString.charAt(index: i) == firstLetter {
+                    backgroundViews[i].backgroundColor = UIColor.green
+                } else if randomString.contains(firstLetter) {
+                    backgroundViews[i].backgroundColor = UIColor.orange
+                } else {
+                    backgroundViews[i].backgroundColor = UIColor.red
+                }
             }
         }
         checkButton.isSelected = !checkButton.isSelected
@@ -95,7 +89,7 @@ class ViewController: UIViewController {
      it will reset the game to play again
      */
     func replayAction() {
-        randomString = String.generateRandomWord(ofLength: 4)
+        randomString = String.generateRandomWord(from: Constants.randomStringSource, ofLength: 4)
         debugPrint(randomString ?? Constants.randomStringError)
         
         backgroundViews.forEach { (view) in
