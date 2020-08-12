@@ -35,10 +35,10 @@ class MastermindTests: XCTestCase {
     
     func testCheckActionOnSuccessCase() {
         let _ = sut?.view
-        sut?.letter1input.text = "a"
-        sut?.letter2input.text = "b"
-        sut?.letter3input.text = "c"
-        sut?.letter4input.text = "d"
+        sut?.letterInputs[0].text = "a"
+        sut?.letterInputs[1].text = "b"
+        sut?.letterInputs[2].text = "c"
+        sut?.letterInputs[3].text = "d"
         sut?.checkAction(sut!.checkButton!)
         XCTAssert((sut?.validationStatusLabel.isHidden)!)
         XCTAssert((sut?.checkButton.isSelected)!)
@@ -47,9 +47,9 @@ class MastermindTests: XCTestCase {
     func testCheckActionOnValidationError() {
         let _ = sut?.view
         // inputs
-        sut?.letter1input.text = "a"
-        sut?.letter2input.text = "b"
-        sut?.letter3input.text = "c"
+        sut?.letterInputs[0].text = "a"
+        sut?.letterInputs[1].text = "b"
+        sut?.letterInputs[2].text = "c"
         //action
         sut?.checkAction(sut!.checkButton!)
         //assertion
@@ -62,10 +62,10 @@ class MastermindTests: XCTestCase {
         sut?.replayAction()
         XCTAssert((sut?.validationStatusLabel.isHidden)!)
         XCTAssert(!(sut?.checkButton.isSelected)!)
-        XCTAssert((sut?.letter1input.text!.isEmpty)!)
-        XCTAssert((sut?.letter2input.text!.isEmpty)!)
-        XCTAssert((sut?.letter3input.text!.isEmpty)!)
-        XCTAssert((sut?.letter4input.text!.isEmpty)!)
+        XCTAssert((sut?.letterInputs[0].text!.isEmpty)!)
+        XCTAssert((sut?.letterInputs[1].text!.isEmpty)!)
+        XCTAssert((sut?.letterInputs[2].text!.isEmpty)!)
+        XCTAssert((sut?.letterInputs[3].text!.isEmpty)!)
     }
     
     

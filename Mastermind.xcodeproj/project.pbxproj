@@ -103,12 +103,11 @@
 			children = (
 				AA0A321F24E13077005F6BC2 /* AppDelegate.swift */,
 				AA0A322124E13077005F6BC2 /* SceneDelegate.swift */,
-				AA0A322324E13077005F6BC2 /* ViewController.swift */,
-				AA0A322524E13077005F6BC2 /* Main.storyboard */,
+				AA0A329224E3DE46005F6BC2 /* Home */,
 				AA0A322824E13079005F6BC2 /* Assets.xcassets */,
 				AA0A322A24E13079005F6BC2 /* LaunchScreen.storyboard */,
 				AA0A322D24E13079005F6BC2 /* Info.plist */,
-				AA0A324F24E132B6005F6BC2 /* String+Extension.swift */,
+				AA0A329124E3DE26005F6BC2 /* Utilities */,
 			);
 			path = Mastermind;
 			sourceTree = "<group>";
@@ -129,6 +128,23 @@
 				AA0A324324E13079005F6BC2 /* Info.plist */,
 			);
 			path = MastermindUITests;
+			sourceTree = "<group>";
+		};
+		AA0A329124E3DE26005F6BC2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AA0A324F24E132B6005F6BC2 /* String+Extension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AA0A329224E3DE46005F6BC2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AA0A322324E13077005F6BC2 /* ViewController.swift */,
+				AA0A322524E13077005F6BC2 /* Main.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

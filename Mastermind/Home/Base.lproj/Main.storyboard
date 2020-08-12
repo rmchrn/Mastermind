@@ -18,7 +18,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-oG-a2U">
                                 <rect key="frame" x="56" y="379" width="302" height="138.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-cw-z9Y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-cw-z9Y">
                                         <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,15 +132,15 @@
                     </view>
                     <connections>
                         <outlet property="checkButton" destination="kQE-GS-8v5" id="kjh-rg-uCp"/>
-                        <outlet property="letter1Background" destination="usV-Xi-zet" id="Y6c-EE-rUE"/>
-                        <outlet property="letter1input" destination="Kq4-wE-GWR" id="T86-Ah-5fF"/>
-                        <outlet property="letter2Background" destination="Cwr-oT-DSb" id="Iwa-I5-cH2"/>
-                        <outlet property="letter2input" destination="j3F-6X-7a8" id="32c-Ug-B99"/>
-                        <outlet property="letter3Background" destination="5nD-oI-UVZ" id="a07-Bt-Pnb"/>
-                        <outlet property="letter3input" destination="Qbw-Pj-y75" id="MTJ-jD-fme"/>
-                        <outlet property="letter4Background" destination="haG-cm-6EL" id="A8y-OY-MB3"/>
-                        <outlet property="letter4input" destination="1JK-qY-JkW" id="13G-jl-eQ0"/>
                         <outlet property="validationStatusLabel" destination="KTv-cw-z9Y" id="5lJ-bA-LY9"/>
+                        <outletCollection property="letterInputs" destination="Kq4-wE-GWR" collectionClass="NSMutableArray" id="GZI-rq-F0A"/>
+                        <outletCollection property="letterInputs" destination="j3F-6X-7a8" collectionClass="NSMutableArray" id="qBz-jE-BKe"/>
+                        <outletCollection property="letterInputs" destination="Qbw-Pj-y75" collectionClass="NSMutableArray" id="QsQ-bB-AMA"/>
+                        <outletCollection property="letterInputs" destination="1JK-qY-JkW" collectionClass="NSMutableArray" id="uEg-F9-DIb"/>
+                        <outletCollection property="backgroundViews" destination="usV-Xi-zet" collectionClass="NSMutableArray" id="Ald-Sg-6Of"/>
+                        <outletCollection property="backgroundViews" destination="Cwr-oT-DSb" collectionClass="NSMutableArray" id="CyL-Nr-wSZ"/>
+                        <outletCollection property="backgroundViews" destination="5nD-oI-UVZ" collectionClass="NSMutableArray" id="1lE-MJ-7ow"/>
+                        <outletCollection property="backgroundViews" destination="haG-cm-6EL" collectionClass="NSMutableArray" id="vH9-hA-gh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
